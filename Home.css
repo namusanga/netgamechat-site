@@ -1,4 +1,147 @@
- .u-section-1 {
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+*{
+  margin: 0px;
+}
+
+.vc-container *{
+  font-family: 'Poppins', sans-serif;
+  margin:0; padding:0;
+  box-sizing: border-box;
+  outline: none; border:none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all .2s linear;
+  color: white;
+}
+
+.vc-container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding:0 10%;
+  background:linear-gradient(90deg, #1a1a1a 60%, #1a1a1a 40.1%);
+}
+
+.vc-container .side-bar{
+  width:400px;
+}
+
+.vc-container .side-bar.active{
+  display: none;
+}
+
+.vc-container .side-bar .list{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.vc-container .side-bar .list li{
+  padding:10px 0;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+}
+
+.vc-container .side-bar .list li::before{
+  content: '';
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  left:-5px;
+  width: 0%;
+  height: 3px;
+  background-color: #fff;
+  transition: width .2s linear .2s;
+}
+
+.vc-container .side-bar .list li.active,
+.vc-container .side-bar .list li:hover{
+  font-size: 30px;
+}
+
+.vc-container .side-bar .list li.active::before,
+.vc-container .side-bar .list li:hover::before{
+  right: -5px;
+  width: 105%;
+}
+
+.vc-container .video-container{
+  flex:1;
+}
+
+.vc-container .video-container iframe{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.vc-container h2{
+  text-decoration: underline;
+  text-underline: white;
+  margin-bottom: 20px;
+}
+
+#menu-btn{
+  position: fixed;
+  top:20px; left:30px;
+  font-size: 40px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media (max-width:1200px){
+  .vc-container{
+    position: relative;
+  }
+
+  .vc-container .side-bar{
+    position: absolute;
+    top:0; left:-110%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    padding:30px;
+  }
+
+  .vc-container .side-bar .list{
+    height: 100%;
+    justify-content: center;
+  }
+
+  .vc-container .side-bar.active{
+    box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+    display: initial;
+    left:0;
+  }
+}
+
+@media (max-width:450px){
+
+  .vc-container{
+    padding:20px;
+  }
+
+  .vc-container .side-bar{
+    width: 300px;
+  }
+
+  .vc-container .side-bar .list li{
+    font-size: 15px;
+  }
+
+  .vc-container .side-bar .list li.active{
+    font-size: 20px;
+  }
+
+}
+
+
+.u-section-1 {
   background-image: none;
 }
 
